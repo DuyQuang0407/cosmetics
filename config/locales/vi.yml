@@ -15,3 +15,9 @@ vi:
       signout: đăng xuất   
   confirm:
     signout: Bạn có chắc chắn muốn thoát ?
+  ribbon:
+    popular: thông dụng
+    promotion: khuyến mãi
+    new: s/p mới
+  orders:
+    price_contact: liên hệ
