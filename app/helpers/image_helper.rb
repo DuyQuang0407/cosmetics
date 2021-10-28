@@ -12,4 +12,9 @@ module ImageHelper
       data-background-image=#{thumbnail(image)}
     )
   end
+  def splide_lazy(image)
+    %Q(
+      data-splide-lazy=#{url_for(image)}
+    )
+  end
 end
