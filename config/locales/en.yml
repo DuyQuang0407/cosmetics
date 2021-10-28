@@ -20,4 +20,10 @@ en:
     promotion: promotion
     new: new 
   orders:
-    price_contact: Contact  
+    price_contact: Contact
+  buttons:
+    login: log in
+    signup: sign up  
+  headers:
+    login: Log in
+    signup: sign up
