@@ -11,7 +11,7 @@
   <div class='product-main__control bottom-0 start-0'>
     <div class='product-main__control_action d-flex'>
       <%= render partial: 'products/stepper', locals: { quantity: 1 }%>
-      <%= render partial: 'products/add_to_cart', locals: { price: item.price }%>
+      <%= render partial: 'products/add_to_cart', locals: { price: item.discount? ? item.discount : item.price }%>
     </div>
   </div>
 </div>
