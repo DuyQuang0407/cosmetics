@@ -37,3 +37,5 @@ en:
       benefit: benefits
       ingredient: ingredients
       how_to_use: how to use
+  cart:
+    add_to_cart: add to cart

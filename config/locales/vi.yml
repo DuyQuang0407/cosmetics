@@ -36,4 +36,6 @@ vi:
       recommended: khuyến khích
       benefit: công dụng
       ingredient: thành phần
-      how_to_use: hướng dẫn  
+      how_to_use: hướng dẫn
+  cart:
+    add_to_cart: thêm vào giỏ hàng
