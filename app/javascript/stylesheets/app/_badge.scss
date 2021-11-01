@@ -1,0 +1,45 @@
+.badge-container {
+    position: absolute;
+    z-index: 100;
+    right: 2px;
+    top: 2px;
+    .badge {
+        border-radius: 5px;
+        font-size: 1rem;
+        padding: .3rem .5rem;
+        position: relative;
+        &.sale {
+            position: relative;
+            display: inline-block;
+            background-color: #ff0000;
+            width: 70px;
+            color: #fff;
+            margin-left: 14px;
+            height: 26px;
+            line-height: 1rem;
+            &:before {
+                position: absolute;
+                left: -10px;
+                top: 0px;
+                content: '';
+                display: block;
+                width: 0;
+                height: 0;
+                border-top: 13px solid transparent;
+                border-right: 13px solid red;
+                border-bottom: 13px solid transparent;
+            }
+            &:after {
+                display: block;
+                content: '';
+                position: absolute;
+                background: white;
+                width: 10px;
+                height: 10px;
+                border-radius: 10px;
+                left: -3px;
+                top: calc(100%/2 - 5px);
+            }
+        }
+    }
+}

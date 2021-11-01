@@ -1,8 +1,9 @@
 <div class='product-images d-flex1' data-controller='gallery'>
+  <%= ribbon(product) %>
   <div class='gallery'>
-    <%= render partial: 'products/attachment', locals: { images: images, target: 'gallery', id: 'gallery' } %>
+    <%= render partial: 'products/attachment', locals: { images: product.images, target: 'gallery', id: 'gallery' } %>
   </div>
   <div class='thumbnail'>
-    <%= render partial: 'products/attachment', locals: { images: images, target: 'thumbnail', id: 'gallery-thumbnail' } %>
+    <%= render partial: 'products/attachment', locals: { images: product.images, target: 'thumbnail', id: 'gallery-thumbnail' } %>
   </div>
 </div>
