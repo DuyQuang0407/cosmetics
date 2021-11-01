@@ -1,11 +1,9 @@
-<p id="notice"><%= notice %></p>
-
 <%= render 'shared/breadcrumb' %>
 
 <div  data-controller='infinite-scroll product'>
   <%= turbo_stream_from "products" %>
   <%= turbo_frame_tag "products" do %>    
-    <%= render partial: 'products/items', locals: {products: @products} %>
+    <%= render partial: 'products/items', locals: {products: @products, user: current_user} %>
   <% end %>
   <div data-infinite-scroll-target='scrollArea'>
   </div>

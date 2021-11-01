@@ -6,7 +6,7 @@
         <div class='thumbnail lozad' <%=lozad_class(product.thumbnail)%>>
         </div>
       </div>
-      <%= render 'products/favourite' %>
+      <%= render partial: 'products/favourite', locals: {product: product, user: user} %>
     </div>
     <div class='card-body'>
       <div class='text-capitalize fs-6 more'>

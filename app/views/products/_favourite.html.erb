@@ -1,10 +1,12 @@
 <div class='favourite bottom-0 start-0'>
   <div class='favourite-actions'>
     <div class='actions d-inline-flex'>
-      <% favourites.each do |favourite|%>
-        <div class='action mx-1'>
-          <i class="<%= favourite %>"></i>
-        </div>
+      <% favourites(user).each do |favourite|%>
+        <% if favourite[:will_show] %>
+          <div class='action mx-1'>
+            <i class="<%= favourite[:icon] %>" data-action="click->product#action" data-type=<%= favourite[:type] %>></i>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </div>

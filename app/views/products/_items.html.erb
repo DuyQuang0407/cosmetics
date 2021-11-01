@@ -1,7 +1,11 @@
 <% if local_assigns[:only_content] %>
-  <%= render products %>
+  <% products.each do |product| %>
+    <%= render partial: 'products/product', locals: { product: product, user: user } %>
+  <% end %>
 <% else %>
   <div id = 'items' class='products px-1'>
-    <%= render products %>
+    <% products.each do |product| %>
+      <%= render partial: 'products/product', locals: { product: product, user: user } %>
+    <% end %>
   </div>
 <% end %>

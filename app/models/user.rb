@@ -23,4 +23,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :product_likes, foreign_key: "user_id", class_name: 'Favourite', dependent: :delete_all
   has_one_attached :avatar
+
+  def self.current
+    Thread.current[:user] 
+  end
+
+  def self.current=(user) 
+    Thread.current[:user]=user 
+  end
 end
