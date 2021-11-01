@@ -22,4 +22,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :product_likes, foreign_key: "user_id", class_name: 'Favourite', dependent: :delete_all
+  has_one_attached :avatar
 end

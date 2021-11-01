@@ -7,6 +7,7 @@
 #  name        :string
 #  price       :decimal(8, 2)
 #  quantity    :integer          default(0)
+#  slug        :string
 #  status      :integer          default("newly")
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
@@ -15,13 +16,15 @@
 # Indexes
 #
 #  index_products_on_category_id  (category_id)
+#  index_products_on_slug         (slug) UNIQUE
 #
 # Foreign Keys
 #
 #  fk_rails_...  (category_id => categories.id)
 #
 class Product < ApplicationRecord
-  # extend ProductHelper
+  extend FriendlyId
+  friendly_id :name, use: :slugged
 
   has_many_attached :images
   belongs_to :category
@@ -29,7 +32,7 @@ class Product < ApplicationRecord
   has_many :user_likes, foreign_key: 'product_id', class_name: 'Favourite', dependent: :delete_all
   has_many :product_ingredients, dependent: :destroy
   has_many :ingredients, through: :product_ingredients
-  has_many :recommendeds, dependent: :destroy
+  has_one :recommended, dependent: :destroy
   has_one  :promotion, dependent: :destroy
 
   enum status: [     
@@ -38,6 +41,12 @@ class Product < ApplicationRecord
   ] 
 
   scope :by_limit, -> (size=50) { includes(:category).limit(size)}
+
+  scope :by_product, -> (id) { 
+    includes(:promotion, :recommended)
+    .left_joins(:promotion, :recommended)
+    .where(id: id).or(Product.where(slug: id)).first 
+  }
   
   after_create_commit { broadcast_prepend_to "products" }
   after_destroy_commit { broadcast_remove_to "products" }

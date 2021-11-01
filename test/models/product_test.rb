@@ -7,6 +7,7 @@
 #  name        :string
 #  price       :decimal(8, 2)
 #  quantity    :integer          default(0)
+#  slug        :string
 #  status      :integer          default("newly")
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
@@ -15,6 +16,7 @@
 # Indexes
 #
 #  index_products_on_category_id  (category_id)
+#  index_products_on_slug         (slug) UNIQUE
 #
 # Foreign Keys
 #

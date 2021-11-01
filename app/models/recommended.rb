@@ -2,12 +2,11 @@
 #
 # Table name: recommendeds
 #
-#  id               :bigint           not null, primary key
-#  recommended_type :integer          default(0)
-#  value            :string
-#  created_at       :datetime         not null
-#  updated_at       :datetime         not null
-#  product_id       :bigint           not null
+#  id         :bigint           not null, primary key
+#  content    :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  product_id :bigint           not null
 #
 # Indexes
 #
