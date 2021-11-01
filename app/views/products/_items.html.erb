@@ -1,3 +1,7 @@
-<div class='products px-1'>
+<% if local_assigns[:only_content] %>
   <%= render products %>
-</div>
+<% else %>
+  <div id = 'items' class='products px-1'>
+    <%= render products %>
+  </div>
+<% end %>

@@ -1,6 +1,6 @@
-<turbo-stream action='append' target='products'>
+<turbo-stream action='append' target='items'>
   <template>
-    <%= render partial: 'products/items', locals: {products: @products}, formats: [:html] %>
+    <%= render partial: 'products/items', locals: {products: @products, only_content: true}, formats: [:html] %>
   </template>
 </turbo-stream>
 
